@@ -55,25 +55,25 @@ body {
 
 
 @keyframes slide-1-right-part-animation-start{
-	0%{
+	0%, 100%{
 		transform: translateX(170%);
 	}
 
 
 
-	100%{
+	10%, 90%{
 		transform: translateX(0);
 	}
 }
 
 @-webkit-keyframes slide-1-right-part-animation-start{
-	0%{
+	0%, 100%{
 		transform: translateX(170%);
 	}
 
 
 
-	100%{
+	10%, 90%{
 		transform: translateX(0);
 	}
 }
@@ -81,23 +81,23 @@ body {
 
 
 @keyframes right-part-line-animation-start{
-	0%{
+	0%, 100%{
 		transform: translateX(170%);
 	}
 
 
-	100%{
+	8%, 90%{
 		transform: translateX(0);
 	}
 }
 
 @-webkit-keyframes right-part-line-animation-start{
-	0%{
+	0%, 100%{
 		transform: translateX(170%);
 	}
 
 
-	100%{
+	8%, 90%{
 		transform: translateX(0);
 	}
 }
@@ -154,6 +154,7 @@ body {
 	max-width: 100%;
 	position: relative;
 	overflow: hidden;
+	/*background: lightblue;*/
 }
 
 #slider-container{
@@ -177,6 +178,7 @@ body {
 
 .slide-content{
 	position: relative;
+	height: 100%;
 }
 
 #slider-left-part{
@@ -247,7 +249,7 @@ border-right: 2px rgba(248,0,21,0.7) solid;
 	-webkit-animation-timing-function: cubic-bezier(0.680, 0, 0.265, 1);*/
 }
 
-#slide-1-right-part-line{
+#slide-1-right-part-line, #slide-2-right-part-line, #slide-3-right-part-line{
 	background-color: #eb1b28;
 	height: 2px;
 	width: 324px;
@@ -256,11 +258,20 @@ border-right: 2px rgba(248,0,21,0.7) solid;
 	bottom: 8px;
 	z-index: 1;
 
-	animation: right-part-line-animation-start 1.2s;
-	-webkit-animation: right-part-line-animation-start 1.2s;
+	-webkit-animation-name: right-part-line-animation-start ;
+	-webkit-animation-duration: 15s;
+	-webkit-animation-iteration-count: infinite;
 	/*animation-timing-function: cubic-bezier(0.680, 0, 0.265, 1);
 	-webkit-animation-timing-function: cubic-bezier(0.680, 0, 0.265, 1);*/
 
+}
+
+#slide-2-right-part-line{
+	-webkit-animation-delay: 4.5s;
+}
+
+#slide-3-right-part-line{
+	-webkit-animation-delay: 9.5s;
 }
 
 #slide-1-right-part-text, #slide-2-right-part-text{
@@ -282,9 +293,16 @@ border-right: 2px rgba(248,0,21,0.7) solid;
 
 }
 
-#slide-1-right-part-text{
-	animation: slide-1-right-part-animation-start 1.4s;
-	-webkit-animation: right-part-animation-start 1.4s;
+#slide-1-right-part-text, #slide-2-right-part-text{
+	-webkit-animation-name: slide-1-right-part-animation-start ;
+	-webkit-animation-duration: 15s;
+	-webkit-animation-iteration-count: infinite;
+
+	
+}
+
+#slide-2-right-part-text{
+	-webkit-animation-delay: 4.5s;	
 }
 
 
@@ -313,7 +331,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f80015', end
 	bottom: 0;
 	z-index: 1;
 	background: url(stripe-transp-2.png);
-	opacity: 0.1;
+	opacity: 0.02;
 }
 
 
@@ -356,41 +374,106 @@ div#slider-logo {
 } 
   
 
+@-webkit-keyframes slider-auto{
+	0%{
+		left: 0;
+		opacity: 1;
+	}
+	30%{
+		left: 0%;
+	}
+	33.3333%{
+		left: -100%;
+	}
+	63%{
+		left: -100%;
+	}
+	66.6666%{
+		left: -200%;
+	}
+	96%{
+		left: -200%;
+		opacity: 1;
+
+	}
+	97%{
+		opacity: 0;
+	}
+
+	99.33%{
+		opacity: 0;
+	}
+
+	100%{
+		left: 0;
+		opacity: 1;
+	}
+}
+
+#slider-wrapper{
+	-webkit-animation-name: slider-auto;
+	-webkit-animation-duration: 15s;
+	-webkit-animation-iteration-count: infinite;
+
+}
+
 
 .slide{
 	width: 33.3333%;
 	height: 100%;
 	position: absolute;
 	overflow: hidden;
-	-webkit-animation-duration: 9s;
-	-webkit-animation-iteration-count: infinite;
+/*	-webkit-animation-duration: 9s;
+	-webkit-animation-iteration-count: infinite;*/
 	
 }
 
 #slide-1{
 	/*left: 0;*/
-	-webkit-animation-delay:0s;
-	-webkit-animation-name: round-1;
+	/*-webkit-animation-delay:0s;
+	-webkit-animation-name: round-1;*/
 	left: 0;
 }
 
 #slide-2{
 	/*left: 33.3333%;*/
-	-webkit-animation-delay:3s;
-	-webkit-animation-name: round-1;
+	/*-webkit-animation-delay:3s;
+	-webkit-animation-name: round-1;*/
 	left: 33.3333%;
-	left: 0;
-	opacity: 0;
+	/*left: 0;*/
+	/*opacity: 0;*/
 }
 
 #slide-3{
 	/*left: 66.6666%;*/
-	-webkit-animation-delay:6s;
-	-webkit-animation-name: round-1;
+	/*-webkit-animation-delay:6s;
+	-webkit-animation-name: round-1;*/
 	left: 66.6666%;
-	left: 0;
-	opacity: 0;
+	background: white;
+	/*left: 0;*/
+	/*opacity: 0;*/
 }
+
+
+
+#slide-2-right-part-text{
+	right: 53px;
+}
+
+
+
+#partners-logos-container{
+	right: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 30px;
+}
+
+.partner-logo{
+	display: inline-block;
+}
+
 
 </style>
 
@@ -460,19 +543,24 @@ div#slider-logo {
 			<div class="slide" id="slide-3">
 				<a href="#">
 					<div id="slide-3-content" class="slide-content">
-						<div id="slide-3-main-image-wrapper">
-							<div class="slide-overlay"></div>
-							<img src="background-1.jpg" />
-						</div>
-
-						<div id="slide-3-right-part-text"  class="ease-in-out-back">
-							<img alt="Ремонт та продаж головок блока циліндрів!" src="banner-3-text.svg"  class="ease-in-out-back" />
+						<div id="partners-logos-container">
+							<div id="partner-1-logo" class="partner-logo">
+								<img src="Delphi-logo.jpg" id="partner-1-logo-img" class="partner-logo-img" />
+							</div>
+							<div id="partner-2-logo" class="partner-logo">
+								<img src="Bosch-logo.jpg" id="partner-2-logo-img" class="partner-logo-img" />
+							</div>
+							<div id="partner-3-logo" class="partner-logo">
+								<img src="Siemens-logo.jpg" id="partner-3-logo-img" class="partner-logo-img" />
+							</div>
+							<div id="partner-4-logo" class="partner-logo">
+								<img src="Denso-logo.jpg" id="partner-4-logo-img" class="partner-logo-img" />
+							</div>
 						</div>
 
 						<div id="slide-3-right-part-line">
 
 						</div>
-
 					</div>
 				</a>
 			</div>
