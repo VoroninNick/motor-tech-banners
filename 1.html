@@ -54,7 +54,7 @@ body {
 }
 
 
-@keyframes right-part-animation-start{
+@keyframes slide-1-right-part-animation-start{
 	0%{
 		transform: translateX(170%);
 	}
@@ -66,7 +66,7 @@ body {
 	}
 }
 
-@-webkit-keyframes right-part-animation-start{
+@-webkit-keyframes slide-1-right-part-animation-start{
 	0%{
 		transform: translateX(170%);
 	}
@@ -134,29 +134,8 @@ body {
 	75%, 95%		{ left: -300% }
 }*/
 
-@-webkit-keyframes round{   
-  33%{
-  	opacity: 1;
-  }
-  33.3333%%{
-  	-webkit-transform: translateX(0);
-  	opacity: 1;
-  }
-  66%{
-  	opacity: 1;
-  }
-  66.6666%{
-  	opacity: 0;
-  	-webkit-transform: translateX(-100%);
-  }
-  0%, 100%{
-  	-webkit-transform: translateX(100%);
-  }
-  0%, 100%{
-  	opacity: 0;
-  }
-  
-} 
+
+
 
 
 /*@-moz-keyframes round{   
@@ -194,15 +173,7 @@ body {
 	animation: slider 32s infinite;*/
 }
 
-.slide{
-	width: 33.3333%;
-	height: 100%;
-	position: absolute;
-	overflow: hidden;
-	-webkit-animation:round 9s infinite;
-	-moz-animation:round 9s infinite;
-	animation:round 9s infinite;
-}
+
 
 .slide-content{
 	position: relative;
@@ -224,7 +195,7 @@ body {
 	
 }
 
-#slide-1-logo-img{
+#slider-logo-img{
 	animation: left-part-animation-start;
 	-webkit-animation: left-part-animation-start ;
 	/*animation-timing-function: cubic-bezier(0.680, 0, 0.265, 1);
@@ -292,7 +263,7 @@ border-right: 2px rgba(248,0,21,0.7) solid;
 
 }
 
-#slide-1-right-part-text{
+#slide-1-right-part-text, #slide-2-right-part-text{
 	color: white;
 	position: absolute;
 	top: 6px;
@@ -303,13 +274,17 @@ border-right: 2px rgba(248,0,21,0.7) solid;
 	font-family: Arial;
 	z-index: 1;
 
-	animation: right-part-animation-start 1.4s;
-	-webkit-animation: right-part-animation-start 1.4s;
+	
 	/*animation-timing-function: cubic-bezier(0.680, 0, 0.265, 1);
 	-webkit-animation-timing-function: cubic-bezier(0.680, 0, 0.265, 1);*/
 
 
 
+}
+
+#slide-1-right-part-text{
+	animation: slide-1-right-part-animation-start 1.4s;
+	-webkit-animation: right-part-animation-start 1.4s;
 }
 
 
@@ -360,24 +335,61 @@ div#slider-logo {
 	font-family: Arial;
 }
 
+@-webkit-keyframes round-1{   
+  0%{
+  	opacity: 1;
+  	-webkit-transform: translateX(0);
+  }
+  33%{
+  	opacity: 1;
+  }
+  33.3333%{
+  	opacity: 0;
+  	-webkit-transform: translateX(-100%);
+  }
+  100%{
+  	-webkit-transform: translateX(100%);
+  	opacity: 1;
+  }
+  
+  
+} 
+  
 
+
+.slide{
+	width: 33.3333%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	-webkit-animation-duration: 9s;
+	-webkit-animation-iteration-count: infinite;
+	
+}
 
 #slide-1{
 	/*left: 0;*/
-	-webkit-animation-delay:6s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-name: round-1;
 	left: 0;
 }
 
 #slide-2{
 	/*left: 33.3333%;*/
 	-webkit-animation-delay:3s;
+	-webkit-animation-name: round-1;
 	left: 33.3333%;
+	left: 0;
+	opacity: 0;
 }
 
 #slide-3{
 	/*left: 66.6666%;*/
-	-webkit-animation-delay:0s;
+	-webkit-animation-delay:6s;
+	-webkit-animation-name: round-1;
 	left: 66.6666%;
+	left: 0;
+	opacity: 0;
 }
 
 </style>
@@ -414,7 +426,7 @@ div#slider-logo {
 						</div>
 
 						<div id="slide-1-right-part-text"  class="ease-in-out-back">
-							<img alt="Ремонт та продаж головок блока циліндрів!" src="banner-2-text.svg"  class="ease-in-out-back" />
+							<img alt="Ремонт та продаж головок блока циліндрів!" src="banner-1-text-2.svg"  class="ease-in-out-back" />
 						</div>
 
 						<div id="slide-1-right-part-line">
@@ -430,11 +442,11 @@ div#slider-logo {
 					<div id="slide-2-content" class="slide-content">
 						<div id="slide-2-main-image-wrapper">
 							<div class="slide-overlay"></div>
-							<img src="background-1.jpg" />
+							<img src="background-2.jpg" />
 						</div>
 
 						<div id="slide-2-right-part-text"  class="ease-in-out-back">
-							<img alt="Ремонт та продаж головок блока циліндрів!" src="banner-2-text.svg"  class="ease-in-out-back" />
+							<img alt="Ремонт форсунок всех типов" src="banner-2-text.svg"  class="ease-in-out-back" />
 						</div>
 
 						<div id="slide-2-right-part-line">
