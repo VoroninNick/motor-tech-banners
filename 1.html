@@ -20,13 +20,13 @@ body {
 }
 
 @-webkit-keyframes left-part-animation-start{
-	0%{
+	0%, 100%{
 		transform: translateX(-135%);
 	}
 
 
 
-	100%{
+	5.3333%, 99%{
 		transform: translateX(0);
 	}
 }
@@ -189,8 +189,10 @@ body {
 	bottom: 0;
 	z-index: 3;
 
-	animation: left-part-animation-start 0.8s;
-	-webkit-animation: left-part-animation-start 0.8s;
+	
+	-webkit-animation-name: left-part-animation-start;
+	-webkit-animation-duration: 15s;
+	-webkit-animation-iteration-count: infinite;
 
 	/*animation-timing-function: cubic-bezier(0.680, 0, 0.265, 1);
 	-webkit-animation-timing-function: cubic-bezier(0.680, 0, 0.265, 1);*/
