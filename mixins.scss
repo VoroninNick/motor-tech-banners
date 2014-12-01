@@ -1,0 +1,57 @@
+@mixin keyframes($name){
+	@-webkit-keyframes $name{
+		@content;
+	}
+	@-moz-keyframes $name{
+		@content;
+	}
+	@-o-keyframes $name{
+		@content;
+	}
+	@-ms-keyframes $name{
+		@content;
+	}
+	@keyframes $name{
+		@content;
+	}
+}
+
+@mixin vendor-prefixes($property, $value){
+	-webkit-#{$property}: #{$value};
+	-moz-#{$property}: #{$value};
+	-o-#{$property}: #{$value};
+	-ms-#{$property}: #{$value};
+	#{$property}: #{$value};
+}
+
+@mixin animation-name($value){
+	@include vendor-prefixes(animation-name, $value);
+}
+
+@mixin animation-duration($value){
+	@include vendor-prefixes(animation-duration, $value);
+}
+
+@mixin animation-delay($value){
+	@include vendor-prefixes(animation-delay, $value);
+}
+
+@mixin animation-iteration-count($value){
+	@include vendor-prefixes(animation-iteration-count, $value);
+}
+
+@mixin animation($value){
+	@include vendor-prefixes(animation, $value);
+}
+
+@mixin transition-timing-function($value){
+	@include vendor-prefixes(transition-timing-function, $value);
+}
+
+@mixin transition($value){
+	@include vendor-prefixes(transition, $value);
+}
+
+@mixin transform($value){
+	@include vendor-prefixes(transform, $value);
+}
